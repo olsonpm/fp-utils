@@ -1,6 +1,6 @@
 {
   "name": "fp-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "personal functional programming utilities",
   "scripts": {
     "build": "node build-all/index.mjs",
@@ -26,12 +26,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@olsonpm/eslint-config-personal": "github:olsonpm/eslint-config-personal#426a513d581d87b65c11aefc77efdcc988e2d77a",
-    "date-fns": "^2.0.1",
     "type-detect": "^4.0.8",
     "universal-eol": "0.0.3"
   },
   "devDependencies": {
+    "@olsonpm/eslint-config-personal": "github:olsonpm/eslint-config-personal#426a513d581d87b65c11aefc77efdcc988e2d77a",
     "@olsonpm/tedent": "github:olsonpm/tedent",
     "chai": "^4.3.4",
     "cpy": "^8.1.2",
