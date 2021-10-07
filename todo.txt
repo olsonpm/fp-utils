@@ -1,0 +1,4 @@
+- test errors
+- ensure lodash equivalents exist
+- create github action to create a release branch so src isn't saved
+  alongside tpl
