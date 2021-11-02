@@ -4,16 +4,16 @@ import getFirstNLines from '../../internal/string/get-first-n-lines.mjs'
 
 const { EOL } = universalEol
 
-export default numberOfLines => {
-  if (!Number.isInteger(numberOfLines))
-    throw new Error('numberOfLines must be an integer')
+export default numLines => {
+  if (!Number.isInteger(numLines))
+    throw new Error('numLines must be an integer')
 
   return str => {
     assertArgIsType(str, 'str', 'string', 'truncateToNLines')
 
-    const { lines, moreLinesExist } = getFirstNLines(numberOfLines)(str)
+    const { lines, moreLinesExist } = getFirstNLines(numLines)(str)
     if (moreLinesExist) {
-      if (numberOfLines === 1) lines[0] += '...'
+      if (numLines === 1) lines[0] += '...'
       else lines.push('...')
     }
 

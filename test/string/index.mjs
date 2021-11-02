@@ -5,6 +5,7 @@ import runEndsWithTests from './ends-with.mjs'
 import runPrependTests from './prepend.mjs'
 import runSplitOnTests from './split-on.mjs'
 import runStartsWithTests from './starts-with.mjs'
+import runTruncateToNCharsTests from './truncate-to-n-chars.mjs'
 import runTruncateToNLinesTests from './truncate-to-n-lines.mjs'
 import runWrapInTests from './wrap-in.mjs'
 
@@ -24,6 +25,7 @@ suite('string', () => {
   runPrependTests()
   runSplitOnTests()
   runStartsWithTests()
+  runTruncateToNCharsTests()
   runTruncateToNLinesTests()
   runWrapInTests()
 })
