@@ -1,6 +1,7 @@
 module.exports = {
   any: require('./any.cjs'),
   containedIn: require('./contained-in.cjs'),
+  containsAll: require('./contains-all.cjs'),
   contains: require('./contains.cjs'),
   discardFirst: require('./discard-first.cjs'),
   discardWhen: require('./discard-when.cjs'),

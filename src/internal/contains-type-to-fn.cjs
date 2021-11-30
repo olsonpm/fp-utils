@@ -1,4 +1,4 @@
-const getType = require('../internal/get-type.cjs')
+const getType = require('./get-type.cjs')
 
 const containsTypeToFn = {
   arguments: contains_arguments,

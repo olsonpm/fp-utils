@@ -1,4 +1,4 @@
-{{{import 'getType' '../internal'}}}
+{{{import 'getType' '.'}}}
 
 const containsTypeToFn = {
   arguments: contains_arguments,

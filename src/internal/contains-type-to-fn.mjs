@@ -1,4 +1,4 @@
-import getType from '../internal/get-type.mjs'
+import getType from './get-type.mjs'
 
 const containsTypeToFn = {
   arguments: contains_arguments,

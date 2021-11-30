@@ -1,5 +1,6 @@
 export { default as any } from './any.mjs'
 export { default as containedIn } from './contained-in.mjs'
+export { default as containsAll } from './contains-all.mjs'
 export { default as contains } from './contains.mjs'
 export { default as discardFirst } from './discard-first.mjs'
 export { default as discardWhen } from './discard-when.mjs'
