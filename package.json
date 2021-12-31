@@ -6,6 +6,7 @@
     "build": "node build-all/index.mjs",
     "test": "mocha --ui tdd test/* test/**/*"
   },
+  "main": "./src/lib/index.cjs",
   "exports": {
     ".": {
       "import": "./src/lib/index.mjs",
