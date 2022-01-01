@@ -1,4 +1,4 @@
-import sinon from 'sinon'
+import { fake } from 'sinon'
 import { expect } from 'chai'
 
 import passThroughE from '#esm/pass-through'
@@ -15,9 +15,9 @@ test('passThrough', () => {
 //------------------//
 
 function testPassThrough(passThrough) {
-  const inc = sinon.fake(n => n + 1),
-    double = sinon.fake(n => n * 2),
-    dec = sinon.fake(n => n - 1)
+  const inc = fake(n => n + 1),
+    double = fake(n => n * 2),
+    dec = fake(n => n - 1)
 
   expect(passThrough(0, [
     inc,

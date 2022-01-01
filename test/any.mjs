@@ -1,4 +1,4 @@
-import sinon from 'sinon'
+import { fake } from 'sinon'
 import { expect } from 'chai'
 import { getArgs } from './utils.mjs'
 
@@ -50,7 +50,7 @@ function testArguments(any) {
   expect(any(gt3)(getArgs(1, 2, 3))).to.be.false
   expect(any(gt3)(getArgs(1, 4, 3))).to.be.true
 
-  const gt3fake = sinon.fake(gt3)
+  const gt3fake = fake(gt3)
 
   any(gt3fake)(getArgs(1))
 
@@ -61,7 +61,7 @@ function testArray(any) {
   expect(any(gt3)([1, 2, 3])).to.be.false
   expect(any(gt3)([1, 4, 3])).to.be.true
 
-  const gt3fake = sinon.fake(gt3)
+  const gt3fake = fake(gt3)
 
   any(gt3fake)([1])
 
@@ -72,7 +72,7 @@ function testMap(any) {
   expect(any(gt3)(new Map([['a', 1], ['b', 2], ['c', 3]]))).to.be.false
   expect(any(gt3)(new Map([['a', 1], ['b', 4], ['c', 3]]))).to.be.true
 
-  const gt3fake = sinon.fake(gt3)
+  const gt3fake = fake(gt3)
 
   any(gt3fake)(new Map([['a', 1]]))
 
@@ -83,7 +83,7 @@ function testObject(any) {
   expect(any(gt3)({ a: 1, b: 2, c: 3 })).to.be.false
   expect(any(gt3)({ a: 1, b: 4, c: 3 })).to.be.true
 
-  const gt3fake = sinon.fake(gt3)
+  const gt3fake = fake(gt3)
 
   any(gt3fake)({ a: 1 })
 
@@ -94,7 +94,7 @@ function testSet(any) {
   expect(any(gt3)(new Set([1, 2, 3]))).to.be.false
   expect(any(gt3)(new Set([1, 4, 3]))).to.be.true
 
-  const gt3fake = sinon.fake(gt3)
+  const gt3fake = fake(gt3)
 
   any(gt3fake)(new Set([1]))
 
@@ -105,7 +105,7 @@ function testTypedArray(any) {
   expect(any(gt3)(Int8Array.of(1, 2, 3))).to.be.false
   expect(any(gt3)(Int8Array.of(1, 4, 3))).to.be.true
 
-  const gt3fake = sinon.fake(gt3)
+  const gt3fake = fake(gt3)
 
   any(gt3fake)(Int8Array.of(1))
 

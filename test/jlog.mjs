@@ -1,4 +1,4 @@
-import sinon from 'sinon'
+import { fake, replace, restore } from 'sinon'
 import tedent from '@olsonpm/tedent'
 import { expect } from 'chai'
 
@@ -16,9 +16,9 @@ test('jlog', () => {
 //------------------//
 
 function testJlog(jlog) {
-  const logFake = sinon.fake()
+  const logFake = fake()
 
-  sinon.replace(console, 'log', logFake)
+  replace(console, 'log', logFake)
 
   try {
     jlog({ a: 1 })
@@ -29,6 +29,6 @@ function testJlog(jlog) {
       }
     `))
   } finally {
-    sinon.restore()
+    restore()
   }
 }

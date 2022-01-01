@@ -1,4 +1,4 @@
-import sinon from 'sinon'
+import { spy as sinonSpy } from 'sinon'
 import { expect } from 'chai'
 import { getArgs } from './utils.mjs'
 
@@ -43,7 +43,7 @@ suite('each', () => {
 //------------------//
 
 function testArguments(each) {
-  const spy = sinon.spy(),
+  const spy = sinonSpy(),
     args = getArgs(1, 2, 3)
 
   const result = each(spy)(args)
@@ -57,7 +57,7 @@ function testArguments(each) {
 }
 
 function testArray(each) {
-  const spy = sinon.spy(),
+  const spy = sinonSpy(),
     arr = [1, 2, 3]
 
   const result = each(spy)(arr)
@@ -71,7 +71,7 @@ function testArray(each) {
 }
 
 function testMap(each) {
-  const spy = sinon.spy(),
+  const spy = sinonSpy(),
     aMap = new Map(Object.entries({ a: 1, b: 2, c: 3 }))
 
   const result = each(spy)(aMap)
@@ -85,7 +85,7 @@ function testMap(each) {
 }
 
 function testObject(each) {
-  const spy = sinon.spy(),
+  const spy = sinonSpy(),
     obj = { a: 1, b: 2, c: 3 }
 
   const result = each(spy)(obj)
@@ -99,7 +99,7 @@ function testObject(each) {
 }
 
 function testSet(each) {
-  const spy = sinon.spy(),
+  const spy = sinonSpy(),
     aSet = new Set([1, 2, 3])
 
   const result = each(spy)(aSet)
@@ -113,7 +113,7 @@ function testSet(each) {
 }
 
 function testTypedArray(each) {
-  const spy = sinon.spy(),
+  const spy = sinonSpy(),
     arr = Int8Array.of(1, 2, 3)
 
   const result = each(spy)(arr)

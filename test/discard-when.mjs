@@ -1,4 +1,4 @@
-import sinon from 'sinon'
+import { fake } from 'sinon'
 import { expect } from 'chai'
 
 import discardWhenE from '#esm/discard-when'
@@ -44,7 +44,7 @@ function testArray(discardWhen) {
   expect(discardWhen(gt3)([1, 2, 3])).to.deep.equal([1, 2, 3])
   expect(discardWhen(gt3)([1, 4, 2, 5])).to.deep.equal([1, 2])
 
-  const gt3Fake = sinon.fake(gt3)
+  const gt3Fake = fake(gt3)
   discardWhen(gt3Fake)([1])
 
   expect(gt3Fake.args[0]).to.deep.equal([1, 0, [1]])
@@ -60,7 +60,7 @@ function testMap(discardWhen) {
   expected = new Map([['a', 1], ['c', 2]])
   expect(discardWhen(gt3)(aMap)).to.deep.equal(expected)
 
-  const gt3Fake = sinon.fake(gt3)
+  const gt3Fake = fake(gt3)
   discardWhen(gt3Fake)(new Map([['a', 1]]))
 
   expect(gt3Fake.args[0]).to.deep.equal([1, 'a', new Map([['a', 1]])])
@@ -76,7 +76,7 @@ function testObject(discardWhen) {
   expected = { a: 1, c: 2 }
   expect(discardWhen(gt3)(obj)).to.deep.equal(expected)
 
-  const gt3Fake = sinon.fake(gt3)
+  const gt3Fake = fake(gt3)
   discardWhen(gt3Fake)({ a: 1 })
 
   expect(gt3Fake.args[0]).to.deep.equal([1, 'a', { a: 1 }])
@@ -92,7 +92,7 @@ function testSet(discardWhen) {
   expected = new Set([1, 2])
   expect(discardWhen(gt3)(aMap)).to.deep.equal(expected)
 
-  const gt3Fake = sinon.fake(gt3)
+  const gt3Fake = fake(gt3)
   discardWhen(gt3Fake)(new Set([1]))
 
   expect(gt3Fake.args[0]).to.deep.equal([1, 1, new Set([1])])
@@ -108,7 +108,7 @@ function testTypedArray(discardWhen) {
   expected = Int8Array.of(1, 2)
   expect(discardWhen(gt3)(aMap)).to.deep.equal(expected)
 
-  const gt3Fake = sinon.fake(gt3)
+  const gt3Fake = fake(gt3)
   discardWhen(gt3Fake)(Int8Array.of(1))
 
   expect(gt3Fake.args[0]).to.deep.equal([1, 0, Int8Array.of(1)])

@@ -1,4 +1,4 @@
-import sinon from 'sinon'
+import { fake } from 'sinon'
 import { expect } from 'chai'
 
 import tapE from '#esm/tap'
@@ -15,7 +15,7 @@ test('tap', () => {
 //------------------//
 
 function testTap(tap) {
-  const inc = sinon.fake(n => n + 1)
+  const inc = fake(n => n + 1)
 
   expect(tap(inc)(1)).to.equal(1)
 

@@ -1,7 +1,3 @@
-const universalEol = require('universal-eol')
-
-const { EOL } = universalEol
-
 module.exports = (numChars, str) => {
   const chars = str.slice(0, numChars),
       moreCharsExist = str.length > chars.length

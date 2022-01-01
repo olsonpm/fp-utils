@@ -1,4 +1,4 @@
-import sinon from 'sinon'
+import { fake } from 'sinon'
 import { expect } from 'chai'
 
 import takeWhileE from '#esm/take-while'
@@ -27,7 +27,7 @@ function lt3(n) {
 
 function testArray(takeWhile) {
   const arr = [1, 2, 3, 4],
-    lt3Fake = sinon.fake(lt3)
+    lt3Fake = fake(lt3)
 
   expect(takeWhile(lt3Fake)(arr)).to.deep.equal([1, 2])
 
@@ -40,7 +40,7 @@ function testArray(takeWhile) {
 
 function testTypedArray(takeWhile) {
   const arr = Int8Array.of(1, 2, 3, 4),
-    lt3Fake = sinon.fake(lt3)
+    lt3Fake = fake(lt3)
 
   expect(takeWhile(lt3Fake)(arr)).to.deep.equal(Int8Array.of(1, 2))
 

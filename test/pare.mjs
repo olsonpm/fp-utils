@@ -1,4 +1,4 @@
-import sinon from 'sinon'
+import { fake } from 'sinon'
 import { expect } from 'chai'
 import { getArgs } from './utils.mjs'
 
@@ -48,7 +48,7 @@ function sum(total, n) {
 
 function testArguments(pare) {
   const args = getArgs(1, 2, 3),
-    sumFake = sinon.fake(sum)
+    sumFake = fake(sum)
 
   const result = pare(sumFake, 0)(args)
   expect(result).to.equal(6)
@@ -62,7 +62,7 @@ function testArguments(pare) {
 
 function testArray(pare) {
   const arr = [1, 2, 3],
-    sumFake = sinon.fake(sum)
+    sumFake = fake(sum)
 
   const result = pare(sumFake, 0)(arr)
   expect(result).to.equal(6)
@@ -76,7 +76,7 @@ function testArray(pare) {
 
 function testMap(pare) {
   const aMap = new Map([['a', 1], ['b', 2], ['c', 3]]),
-    sumFake = sinon.fake(sum)
+    sumFake = fake(sum)
 
   const result = pare(sumFake, 0)(aMap)
   expect(result).to.equal(6)
@@ -90,7 +90,7 @@ function testMap(pare) {
 
 function testObject(pare) {
   const obj = { a: 1, b: 2, c: 3 },
-    sumFake = sinon.fake(sum)
+    sumFake = fake(sum)
 
   const result = pare(sumFake, 0)(obj)
   expect(result).to.equal(6)
@@ -104,7 +104,7 @@ function testObject(pare) {
 
 function testSet(pare) {
   const aSet = new Set([1, 2, 3]),
-    sumFake = sinon.fake(sum)
+    sumFake = fake(sum)
 
   const result = pare(sumFake, 0)(aSet)
   expect(result).to.equal(6)
@@ -118,7 +118,7 @@ function testSet(pare) {
 
 function testTypedArray(pare) {
   const arr = Int8Array.of(1, 2, 3),
-    sumFake = sinon.fake(sum)
+    sumFake = fake(sum)
 
   const result = pare(sumFake, 0)(arr)
   expect(result).to.equal(6)

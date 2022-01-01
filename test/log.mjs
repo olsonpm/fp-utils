@@ -1,4 +1,4 @@
-import sinon from 'sinon'
+import { fake, replace, restore } from 'sinon'
 import { expect } from 'chai'
 
 import logE from '#esm/log'
@@ -15,15 +15,15 @@ test('log', () => {
 //------------------//
 
 function testlog(log) {
-  const logFake = sinon.fake()
+  const logFake = fake()
 
-  sinon.replace(console, 'log', logFake)
+  replace(console, 'log', logFake)
 
   try {
     log('abc')
 
     expect(logFake.args[0][0]).to.equal('abc')
   } finally {
-    sinon.restore()
+    restore()
   }
 }

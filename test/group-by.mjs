@@ -1,4 +1,4 @@
-import sinon from 'sinon'
+import { fake } from 'sinon'
 import { expect } from 'chai'
 import { getArgs } from './utils.mjs'
 
@@ -43,7 +43,7 @@ suite('groupBy', () => {
 //------------------//
 
 function testArguments(groupBy) {
-  const ceilFake = sinon.fake(Math.ceil),
+  const ceilFake = fake(Math.ceil),
     args = getArgs(0.9, 1.2, 1.8)
 
   const result = groupBy(ceilFake)(args)
@@ -61,7 +61,7 @@ function testArguments(groupBy) {
 }
 
 function testArray(groupBy) {
-  const ceilFake = sinon.fake(Math.ceil),
+  const ceilFake = fake(Math.ceil),
     arr = [0.9, 1.2, 1.8]
 
   const result = groupBy(ceilFake)(arr)
@@ -79,7 +79,7 @@ function testArray(groupBy) {
 }
 
 function testMap(groupBy) {
-  const ceilFake = sinon.fake(Math.ceil),
+  const ceilFake = fake(Math.ceil),
     aMap = new Map([['a', 0.9], ['b', 1.2], ['c', 1.8]])
 
   const result = groupBy(ceilFake)(aMap)
@@ -97,7 +97,7 @@ function testMap(groupBy) {
 }
 
 function testObject(groupBy) {
-  const ceilFake = sinon.fake(Math.ceil),
+  const ceilFake = fake(Math.ceil),
     obj = { a: 0.9, b: 1.2, c: 1.8 }
 
   const result = groupBy(ceilFake)(obj)
@@ -115,7 +115,7 @@ function testObject(groupBy) {
 }
 
 function testSet(groupBy) {
-  const ceilFake = sinon.fake(Math.ceil),
+  const ceilFake = fake(Math.ceil),
     aSet = new Set([0.9, 1.2, 1.8])
 
   const result = groupBy(ceilFake)(aSet)
@@ -133,7 +133,7 @@ function testSet(groupBy) {
 }
 
 function testTypedArray(groupBy) {
-  const ceilFake = sinon.fake(Math.ceil),
+  const ceilFake = fake(Math.ceil),
     arr = Float64Array.of(0.9, 1.2, 1.8)
 
   const result = groupBy(ceilFake)(arr)

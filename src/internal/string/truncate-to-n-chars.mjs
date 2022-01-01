@@ -1,7 +1,3 @@
-import universalEol from 'universal-eol'
-
-const { EOL } = universalEol
-
 export default (numChars, str) => {
   const chars = str.slice(0, numChars),
       moreCharsExist = str.length > chars.length

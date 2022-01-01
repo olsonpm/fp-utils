@@ -4,6 +4,7 @@
   "description": "personal functional programming utilities",
   "scripts": {
     "build": "node build-all/index.mjs",
+    "lint": "eslint 'test/**/*' 'src/**/*' 'build-all/**/*'",
     "test": "mocha --ui tdd test/* test/**/*"
   },
   "main": "./src/lib/index.cjs",
@@ -31,7 +32,7 @@
     "universal-eol": "0.0.3"
   },
   "devDependencies": {
-    "@olsonpm/eslint-config-personal": "github:olsonpm/eslint-config-personal#426a513d581d87b65c11aefc77efdcc988e2d77a",
+    "@olsonpm/eslint-config-personal": "github:olsonpm/eslint-config-personal#5aebea6391341acf653dee59a275b70d79370b83",
     "@olsonpm/tedent": "github:olsonpm/tedent",
     "chai": "^4.3.4",
     "cpy": "^8.1.2",
