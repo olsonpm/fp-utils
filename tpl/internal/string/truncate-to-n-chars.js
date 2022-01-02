@@ -1,7 +1,3 @@
-{{{importDep 'universalEol'}}}
-
-const { EOL } = universalEol
-
 {{{exportInline}}} (numChars, str) => {
   const chars = str.slice(0, numChars),
       moreCharsExist = str.length > chars.length
