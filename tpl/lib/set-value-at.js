@@ -23,7 +23,8 @@ function setValueAt_array(arr, key, val) {
 }
 
 function setValueAt_map(aMap, key, val) {
-  return aMap.set(key, val)
+  const result = new Map(aMap)
+  return result.set(key, val)
 }
 
 function setValueAt_object(obj, key, val) {
