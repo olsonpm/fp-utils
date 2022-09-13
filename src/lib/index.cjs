@@ -24,6 +24,7 @@ module.exports = {
   keep: require('./keep.cjs'),
   logError: require('./log-error.cjs'),
   log: require('./log.cjs'),
+  mSetValueAtPath: require('./m-set-value-at-path.cjs'),
   mSetValueAt: require('./m-set-value-at.cjs'),
   mapValues: require('./map-values.cjs'),
   pare: require('./pare.cjs'),

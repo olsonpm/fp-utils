@@ -8,5 +8,6 @@ module.exports = {
   getValueAt: require('./get-value-at.cjs'),
   isIterable: require('./is-iterable.cjs'),
   isLadenTypeToFn: require('./is-laden-type-to-fn.cjs'),
+  mSetValueAt: require('./m-set-value-at.cjs'),
   negate: require('./negate.cjs'),
 }
