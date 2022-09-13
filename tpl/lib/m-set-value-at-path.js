@@ -9,7 +9,7 @@ const mSetValueAtPath = (path, val) => {
   return anything => {
     const obj = path.slice(0, -1).reduce(
       (result, key) => {
-        let innerObj = getValueAt(result, key)
+        let innerObj = getValueAt(key, result)
         if (innerObj === undefined) {
           innerObj = {}
           mSetValueAt(result, key, innerObj)

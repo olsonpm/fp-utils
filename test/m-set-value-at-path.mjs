@@ -26,24 +26,24 @@ suite('mSetValueAtPath', () => {
 //------------------//
 
 function testArray(mSetValueAtPath) {
-  const arr = [0, { value: 0 }]
+  const arr = [0, { key: 1, value: 0 }]
   mSetValueAtPath([1, 'value'], 1)(arr)
-  expect(arr).to.deep.equal([0, { value: 1 }])
+  expect(arr).to.deep.equal([0, { key: 1, value: 1 }])
 }
 
 function testMap(mSetValueAtPath) {
-  const aMap = new Map([['a', 0], ['b', { value: 0 }]])
+  const aMap = new Map([['a', 0], ['b', { key: 'b', value: 0 }]])
   mSetValueAtPath(['b', 'value'], 1)(aMap)
   expect(aMap).to.deep.equal(
     new Map([
       ['a', 0],
-      ['b', { value: 1 }],
+      ['b', { key: 'b', value: 1 }],
     ])
   )
 }
 
 function testObject(mSetValueAtPath) {
-  const obj = { a: 0, b: { value: 0 } }
+  const obj = { a: 0, b: { key: 'b', value: 0 } }
   mSetValueAtPath(['b', 'value'], 1)(obj)
-  expect(obj).to.deep.equal({ a: 0, b: { value: 1 } })
+  expect(obj).to.deep.equal({ a: 0, b: { key: 'b', value: 1 } })
 }
