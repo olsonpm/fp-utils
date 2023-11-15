@@ -31,6 +31,7 @@ module.exports = {
   omit: require('./omit.cjs'),
   pare: require('./pare.cjs'),
   passThrough: require('./pass-through.cjs'),
+  pick: require('./pick.cjs'),
   resolveValues: require('./resolve-values.cjs'),
   returnFirstArg: require('./return-first-arg.cjs'),
   setValueAt: require('./set-value-at.cjs'),
