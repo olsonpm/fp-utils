@@ -16,6 +16,7 @@ module.exports = {
   getValueAtPath: require('./get-value-at-path.cjs'),
   getValueAt: require('./get-value-at.cjs'),
   groupBy: require('./group-by.cjs'),
+  invert: require('./invert.cjs'),
   isEmpty: require('./is-empty.cjs'),
   isLaden: require('./is-laden.cjs'),
   jlog: require('./jlog.cjs'),
